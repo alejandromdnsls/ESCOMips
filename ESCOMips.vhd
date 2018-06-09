@@ -33,7 +33,7 @@ architecture Behavioral of ESCOMips is
 	
 	--Señales de microinstruccion
 	signal LF : std_logic;
-	signal FLAGS : std_logic_vector(3 downto 0);
+	signal FLAGS : std_logic_vector(3 downto 0); ---ALU
 	signal DIR : std_logic;
 	signal WR : std_logic;
 	signal SHE : std_logic;
@@ -41,10 +41,19 @@ architecture Behavioral of ESCOMips is
 	signal SR : std_logic; 
 	signal SR2 : std_logic;
 	signal SEXT : std_logic;
+	signal ALUOP : std_logic_vector(3 downto 0);
+	signal WD : std_logic;
+	signal SDMD : std_logic;
 	
 	--Señales de Archivo de Registros
 	signal READ_DATA1 : std_logic_vector (n-1 downto 0);
 	signal READ_DATA2 : std_logic_vector (n-1 downto 0);
+	
+	--Señales de ALU
+	signal RES : std_logic_vector (n-1 downto 0);
+	
+	--Señales de Mem de Datos
+	signal MEMDATOS_OUT: std_logic_vector(n-1 downto 0);
 	
 	--Multiplexores
 	signal SSWD : std_logic_vector(n-1 downto 0);
@@ -53,6 +62,8 @@ architecture Behavioral of ESCOMips is
 	signal SSOP1 : std_logic_vector(n-1 downto 0);
 	signal SSOP2 : std_logic_vector(n-1 downto 0);
 	signal SSEXT : std_logic_vector(n-1 downto 0);
+	signal SSDMD : std_logic_vector(n-1 downto 0);
+	
 
 begin
 
@@ -66,6 +77,9 @@ begin
 	SOP1 <= microinstruccion(9);
 	SOP2 <= microinstruccion(8);
 	SEXT <= microinstruccion(13);
+	ALUOP <= microinstruccion(7 downto 4); ---CHECAR
+	WD <= microinstruccion(2);
+	SDMD <= microinstruccion(3);
 	
 	SSWD <= instruccion(15 downto 0) when SWD = '0' else SSR;
 	--SSR <= 
@@ -73,6 +87,7 @@ begin
 	SSEXT <= ---EXTENSORES	
 	SSOP1 <= READ_DATA1 when SOP1 = '0' else ---PC;
 	SSOP2 <= READ_DATA2 when SOP2 = '0' else SSEXT;
+	SSDMD <= RES when SDMD = '0' else instruccion(15 downto 0);
 	
 	main : unidad_control
 	Port map(
@@ -100,19 +115,29 @@ begin
       shamt => instruccion (7 downto 4),
       read_data1 => READ_DATA1,
       read_data2 => READ_DATA2
-	)
+	);
 	
 	ALU4Bits : ALU
 	Port map(
-		a => in  STD_LOGIC_VECTOR (15 downto 0);
-      b : in  STD_LOGIC_VECTOR (15 downto 0);
-      sel_a : in  STD_LOGIC;
-      sel_b : in  STD_LOGIC;
-      op : in  STD_LOGIC_VECTOR (1 downto 0);
-		--cout : inout  STD_LOGIC;
-		res : inout  STD_LOGIC_VECTOR (15 downto 0);
-      flags : out  STD_LOGIC_VECTOR (3 downto 0)
+		a => SSOP1,
+      b => SSOP2,
+      sel_a => ALUOP(3),
+      sel_b => ALUOP(2),
+      op => ALUOP(1 downto 0),
+		res => RES,
+      flags => FLAGS
+	);
+	
+	mem1 : memoria_datos
+	Port map(
+		clk => CLK,
+		din => READ_DATA2;
+      add => SSDMD;
+      wd =>  WD,
+      dout => MEMDATOS_OUT
 	)
+	
+	
 	
 	
 	

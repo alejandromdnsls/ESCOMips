@@ -19,7 +19,7 @@ entity ESCOMips is
 			RCLK : in std_logic;
 			salida : out std_logic_vector (7 downto 0);
 			PC : out std_logic_vector (7 downto 0)
-		)
+		);
 
 end ESCOMips;
 
@@ -28,7 +28,9 @@ architecture Behavioral of ESCOMips is
 	signal CLR : std_logic;
 	signal CLK : std_logic;
 	
+	--Señales de Pila
 	signal instruccion : std_logic_vector(24 downto 0);
+	
 	signal microinstruccion : std_logic_vector (19 downto 0);
 	
 	--Señales de microinstruccion
@@ -62,6 +64,10 @@ architecture Behavioral of ESCOMips is
 	--Señales Mem de Programa
 	signal PC: std_logic_vector(n-1 downto 0);
 	signal SP: std_logic_vector(3 downto 0);
+	
+	--EXTENSORES
+	signal SIGNO: std_logic_vector(n-1 downto 0);
+	signal DIRECCION: std_logic_vector(n-1 downto 0);
 	
 	--Multiplexores
 	signal SSWD : std_logic_vector(n-1 downto 0);
@@ -97,7 +103,7 @@ begin
 	SSWD <= instruccion(15 downto 0) when SWD = '0' else SSR;
 	SSR <= MEMDATOS_OUT when SR = '0' else RES;
 	SSR2 <= instruccion (11 downto 8) when SR2 = '0' else instruccion (19 downto 16);
-	SSEXT <= ---EXTENSORES	
+	SSEXT <= SIGNO when SEXT = '0' else DIRECCION;
 	SSOP1 <= READ_DATA1 when SOP1 = '0' else PC;
 	SSOP2 <= READ_DATA2 when SOP2 = '0' else SSEXT;
 	SSDMD <= RES when SDMD = '0' else instruccion(15 downto 0);
@@ -145,23 +151,43 @@ begin
 	mem1 : memoria_datos
 	Port map(
 		clk => CLK,
-		din => READ_DATA2;
-      add => SSDMD;
+		din => READ_DATA2,
+      add => SSDMD,
       wd =>  WD,
       dout => MEMDATOS_OUT
-	)
+	);
 	
 	Pila : pila
 	Port map(
-		D => SSDMP;
-      up => UP;
-      dw => DW;
-      wpc => WPC;
-      clr =>  CLR;
-      clk => CLK;
-      q => PC;
+		D => SSDMP,
+      up => UP,
+      dw => DW,
+      wpc => WPC,
+      clr =>  CLR,
+      clk => CLK,
+      q => PC,
 		sp => SP
-	)
+	);
+	
+	Mem2P6 : memoria_programa
+	Port map(
+		dir => PC,
+      ins => instruccion
+	);
+	
+	Extensor_signo : extensor_sig
+	Port map(
+		entrada => instruccion(11 downto 0),
+		salida => SIGNO
+	);
+	
+	Extensor_direccion : extensor_dir
+	Port map(
+		entrada => instruccion (11 downto 0),
+		salida => DIRECCION
+	);
+	
+	
 	
 	
 	

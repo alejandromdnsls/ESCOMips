@@ -44,6 +44,10 @@ architecture Behavioral of ESCOMips is
 	signal ALUOP : std_logic_vector(3 downto 0);
 	signal WD : std_logic;
 	signal SDMD : std_logic;
+	signal SDMP : std_logic;
+	signal UP : std_logic;
+	signal DW : std_logic;
+	signal WPC : std_logic;
 	
 	--Señales de Archivo de Registros
 	signal READ_DATA1 : std_logic_vector (n-1 downto 0);
@@ -55,6 +59,10 @@ architecture Behavioral of ESCOMips is
 	--Señales de Mem de Datos
 	signal MEMDATOS_OUT: std_logic_vector(n-1 downto 0);
 	
+	--Señales Mem de Programa
+	signal PC: std_logic_vector(n-1 downto 0);
+	signal SP: std_logic_vector(3 downto 0);
+	
 	--Multiplexores
 	signal SSWD : std_logic_vector(n-1 downto 0);
 	signal SSR : std_logic_vector(n-1 downto 0);
@@ -63,6 +71,7 @@ architecture Behavioral of ESCOMips is
 	signal SSOP2 : std_logic_vector(n-1 downto 0);
 	signal SSEXT : std_logic_vector(n-1 downto 0);
 	signal SSDMD : std_logic_vector(n-1 downto 0);
+	signal SSDMP : std_logic_vector(n-1 downto 0);
 	
 
 begin
@@ -80,14 +89,19 @@ begin
 	ALUOP <= microinstruccion(7 downto 4); ---CHECAR
 	WD <= microinstruccion(2);
 	SDMD <= microinstruccion(3);
+	SDMP <= microinstruccion(19);
+	UP <= microinstruccion(18);
+	DW <= microinstruccion(17);
+	WPC <= microinstruccion(16);
 	
 	SSWD <= instruccion(15 downto 0) when SWD = '0' else SSR;
-	--SSR <= 
+	SSR <= MEMDATOS_OUT when SR = '0' else RES;
 	SSR2 <= instruccion (11 downto 8) when SR2 = '0' else instruccion (19 downto 16);
 	SSEXT <= ---EXTENSORES	
-	SSOP1 <= READ_DATA1 when SOP1 = '0' else ---PC;
+	SSOP1 <= READ_DATA1 when SOP1 = '0' else PC;
 	SSOP2 <= READ_DATA2 when SOP2 = '0' else SSEXT;
 	SSDMD <= RES when SDMD = '0' else instruccion(15 downto 0);
+	SSDMP <= instruccion(15 downto 0) when SDMP = '0' else SSR; 
 	
 	main : unidad_control
 	Port map(
@@ -135,6 +149,18 @@ begin
       add => SSDMD;
       wd =>  WD,
       dout => MEMDATOS_OUT
+	)
+	
+	Pila : pila
+	Port map(
+		D => SSDMP;
+      up => UP;
+      dw => DW;
+      wpc => WPC;
+      clr =>  CLR;
+      clk => CLK;
+      q => PC;
+		sp => SP
 	)
 	
 	

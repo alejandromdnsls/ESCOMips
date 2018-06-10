@@ -50,7 +50,7 @@ end component;
 
 component mem1 is
 	generic(
-				m :integer := 16;
+				m :integer := 11; --modificacion
 				n :integer := 16
 	);
 	port(
@@ -77,7 +77,7 @@ end component;
 
 component Mem2P6 is
 	generic(
-			m: integer := 16;
+			m: integer := 10; --modificacion
 			n: integer := 25
 		);
 	port(

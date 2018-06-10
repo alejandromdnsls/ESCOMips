@@ -15,7 +15,7 @@ use ieee.std_logic_unsigned.all;
 
 entity Mem2P6 is
 		generic(
-			m: integer := 16;
+			m: integer := 10; --modificacion
 			n: integer := 25
 		);
 

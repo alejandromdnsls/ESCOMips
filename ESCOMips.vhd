@@ -87,7 +87,7 @@ architecture Behavioral of ESCOMips is
 begin
 	
 	CLR <= RCLR;
-	CLK <= RCLK;
+	--CLK <= RCLK;
 	LF <= microinstruccion(0);
 	DIR <= microinstruccion(11);
 	WR <= microinstruccion(10);
@@ -158,7 +158,7 @@ begin
 	Port map(
 		clk => CLK,
 		din => READ_DATA2,
-      add => SSDMD,
+      add => SSDMD(10 downto 0), --modficacion
       wd =>  WD,
       dout => MEMDATOS_OUT
 	);
@@ -177,7 +177,7 @@ begin
 	
 	Memoria_Programa : Mem2P6
 	Port map(
-		dir => PC,
+		dir => PC(9 downto 0), --modificacion
       ins => instruccion
 	);
 	
@@ -201,7 +201,7 @@ begin
 	);
 	
 	salida <= READ_DATA2;
-	count_prog <= PC;
+	count_prog <= PC(9 downto 0); ---modificación
 	
 	
 end Behavioral;

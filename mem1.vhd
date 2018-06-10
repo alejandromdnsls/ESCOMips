@@ -7,7 +7,7 @@ use ieee.std_logic_unsigned.ALL;
 entity mem1 is
 
 	 generic(
-				m :integer := 16;
+				m :integer := 11;
 				n :integer := 16
 	); 
 

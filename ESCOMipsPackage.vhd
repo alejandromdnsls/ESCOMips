@@ -99,8 +99,15 @@ component Extensor_direccion is
 			salida : out std_logic_vector(15 downto 0)
 	);
 end component;
+
+
+component divisor is
+	Port ( OSC_CLK : in  STD_LOGIC;
+           CLR : in  STD_LOGIC;
+           CLK : INOUT  STD_LOGIC
+           );
+end component;
+
 end ESCOMipsPackage;
 
-package body ESCOMipsPackage is
- 
-end ESCOMipsPackage;
+

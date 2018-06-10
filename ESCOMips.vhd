@@ -193,8 +193,16 @@ begin
 		salida => DIRECCION
 	);
 	
+	Divisor_Frecuencia : divisor
+	Port map(
+		OSC_CLK => RCLK,
+      CLR => CLR,
+      CLK => CLK
+	);
+	
 	salida <= READ_DATA2;
 	count_prog <= PC;
+	
 	
 end Behavioral;
 

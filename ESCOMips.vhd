@@ -1,5 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+library work;
+use work.ESCOMipsPackage.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -17,8 +19,8 @@ entity ESCOMips is
 	Port(
 			RCLR : in std_logic;
 			RCLK : in std_logic;
-			salida : out std_logic_vector (7 downto 0);
-			PC : out std_logic_vector (7 downto 0)
+			salida : out std_logic_vector (n-1 downto 0);
+			count_prog : out std_logic_vector (n-1 downto 0)
 		);
 
 end ESCOMips;
@@ -50,6 +52,8 @@ architecture Behavioral of ESCOMips is
 	signal UP : std_logic;
 	signal DW : std_logic;
 	signal WPC : std_logic;
+	signal SOP1 : std_logic;
+	signal SOP2 : std_logic;
 	
 	--Señales de Archivo de Registros
 	signal READ_DATA1 : std_logic_vector (n-1 downto 0);
@@ -72,7 +76,7 @@ architecture Behavioral of ESCOMips is
 	--Multiplexores
 	signal SSWD : std_logic_vector(n-1 downto 0);
 	signal SSR : std_logic_vector(n-1 downto 0);
-	signal SSR2 : std_logic_vector(4 downto 0);
+	signal SSR2 : std_logic_vector(3 downto 0);
 	signal SSOP1 : std_logic_vector(n-1 downto 0);
 	signal SSOP2 : std_logic_vector(n-1 downto 0);
 	signal SSEXT : std_logic_vector(n-1 downto 0);
@@ -81,7 +85,9 @@ architecture Behavioral of ESCOMips is
 	
 
 begin
-
+	
+	CLR <= RCLR;
+	CLK <= RCLK;
 	LF <= microinstruccion(0);
 	DIR <= microinstruccion(11);
 	WR <= microinstruccion(10);
@@ -102,14 +108,14 @@ begin
 	
 	SSWD <= instruccion(15 downto 0) when SWD = '0' else SSR;
 	SSR <= MEMDATOS_OUT when SR = '0' else RES;
-	SSR2 <= instruccion (11 downto 8) when SR2 = '0' else instruccion (19 downto 16);
+	SSR2 <= instruccion(11 downto 8) when SR2 = '0' else instruccion(19 downto 16);
 	SSEXT <= SIGNO when SEXT = '0' else DIRECCION;
 	SSOP1 <= READ_DATA1 when SOP1 = '0' else PC;
 	SSOP2 <= READ_DATA2 when SOP2 = '0' else SSEXT;
 	SSDMD <= RES when SDMD = '0' else instruccion(15 downto 0);
 	SSDMP <= instruccion(15 downto 0) when SDMP = '0' else SSR; 
 	
-	main : unidad_control
+	Unidad_Control : main
 	Port map(
 		clk => CLK,
 		clr => CLR,
@@ -121,7 +127,7 @@ begin
 		S => microinstruccion
 	);
 	
-	Registros : archivo_reg
+	Archivo_Registros : Registros
 	Port map(
 		clk => CLK,
       clr => CLR,
@@ -137,7 +143,7 @@ begin
       read_data2 => READ_DATA2
 	);
 	
-	ALU4Bits : ALU
+	ALU : ALU4Bits
 	Port map(
 		a => SSOP1,
       b => SSOP2,
@@ -148,7 +154,7 @@ begin
       flags => FLAGS
 	);
 	
-	mem1 : memoria_datos
+	Memoria_Datos : mem1
 	Port map(
 		clk => CLK,
 		din => READ_DATA2,
@@ -157,7 +163,7 @@ begin
       dout => MEMDATOS_OUT
 	);
 	
-	Pila : pila
+	Stack : Pila
 	Port map(
 		D => SSDMP,
       up => UP,
@@ -169,31 +175,26 @@ begin
 		sp => SP
 	);
 	
-	Mem2P6 : memoria_programa
+	Memoria_Programa : Mem2P6
 	Port map(
 		dir => PC,
       ins => instruccion
 	);
 	
-	Extensor_signo : extensor_sig
+	Extensor_Sig : Extensor_signo
 	Port map(
 		entrada => instruccion(11 downto 0),
 		salida => SIGNO
 	);
 	
-	Extensor_direccion : extensor_dir
+	Extensor_Dir : Extensor_direccion
 	Port map(
 		entrada => instruccion (11 downto 0),
 		salida => DIRECCION
 	);
 	
+	salida <= READ_DATA2;
+	count_prog <= PC;
 	
-	
-	
-	
-	
-	
-
-
 end Behavioral;
 

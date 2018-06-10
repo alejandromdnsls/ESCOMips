@@ -1,0 +1,193 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: ESCOMips.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ESCOMips.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ESCOMips"
+Output Format                      : NGC
+Target Device                      : xc7a100t-2-csg324
+
+---- Source Options
+Top Module Name                    : ESCOMips
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\unidad-de-control-1\automata.vhd" into library work
+Parsing entity <Control>.
+Parsing architecture <Behavioral> of entity <control>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\OpCode.vhd" into library work
+Parsing entity <OpCode>.
+Parsing architecture <Behavioral> of entity <opcode>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Nivel.vhd" into library work
+Parsing entity <Nivel>.
+Parsing architecture <Behavioral> of entity <nivel>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\MicroFuncion.vhd" into library work
+Parsing entity <MicroFuncion>.
+Parsing architecture <Behavioral> of entity <microfuncion>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\DetectorCondicion.vhd" into library work
+Parsing entity <DetectorCondicion>.
+Parsing architecture <Behavioral> of entity <detectorcondicion>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Deco.vhd" into library work
+Parsing entity <Deco>.
+Parsing architecture <Behavioral> of entity <deco>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Registros.vhd" into library work
+Parsing entity <Registros>.
+Parsing architecture <Behavioral> of entity <registros>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Pila.vhd" into library work
+Parsing entity <Pila>.
+Parsing architecture <Behavioral> of entity <pila>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Mem2P6.vhd" into library work
+Parsing entity <Mem2P6>.
+Parsing architecture <Behavioral> of entity <mem2p6>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\mem1.vhd" into library work
+Parsing entity <mem1>.
+Parsing architecture <Behavioral> of entity <mem1>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\main.vhd" into library work
+Parsing entity <main>.
+Parsing architecture <Behavioral> of entity <main>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Extensor_signo.vhd" into library work
+Parsing entity <Extensor_signo>.
+Parsing architecture <Behavioral> of entity <extensor_signo>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Extensor_direccion.vhd" into library work
+Parsing entity <Extensor_direccion>.
+Parsing architecture <Behavioral> of entity <extensor_direccion>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\ESCOMipsPackage.vhd" into library work
+Parsing package <ESCOMipsPackage>.
+Parsing package body <ESCOMipsPackage>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\alu4bits.vhd" into library work
+Parsing entity <ALU4Bits>.
+Parsing architecture <Behavioral> of entity <alu4bits>.
+Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\ESCOMips.vhd" into library work
+Parsing entity <ESCOMips>.
+Parsing architecture <Behavioral> of entity <escomips>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <ESCOMips> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <main> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <OpCode> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Nivel> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <MicroFuncion> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <DetectorCondicion> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Deco> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Control> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\main.vhd" Line 193. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\main.vhd" Line 202. Case statement is complete. others clause is never selected
+
+Elaborating entity <Registros> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Registros.vhd" Line 37: read_reg1 should be on the sensitivity list of the process
+
+Elaborating entity <ALU4Bits> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <mem1> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <Pila> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Mem2P6> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Mem2P6.vhd" Line 30: Net <arreglo[5][24]> does not have a driver.
+
+Elaborating entity <Extensor_signo> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Extensor_direccion> (architecture <Behavioral>) from library <work>.

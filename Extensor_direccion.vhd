@@ -10,7 +10,7 @@ end Extensor_direccion;
 
 architecture Behavioral of Extensor_direccion is
 
-	signal MSB : std_logic;
+	signal MSB : std_logic_vector(3 downto 0);
 
 begin
 

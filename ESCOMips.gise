@@ -24,17 +24,117 @@
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="ESCOMips.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="ESCOMips.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="ESCOMips.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="ESCOMips.ngr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ESCOMips.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="ESCOMips.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="ESCOMips.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="ESCOMips.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="ESCOMips_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="ESCOMips_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_escomips_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_escomips_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_escomips_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_escomips_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_memprog_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_memprog_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1528700328" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1528700328">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1528705834" xil_pn:in_ck="-4253520846644678340" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1528705834">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../unidad-de-control-1/automata.vhd"/>
+      <outfile xil_pn:name="Deco.vhd"/>
+      <outfile xil_pn:name="DetectorCondicion.vhd"/>
+      <outfile xil_pn:name="ESCOMips.vhd"/>
+      <outfile xil_pn:name="ESCOMipsPackage.vhd"/>
+      <outfile xil_pn:name="Extensor_direccion.vhd"/>
+      <outfile xil_pn:name="Extensor_signo.vhd"/>
+      <outfile xil_pn:name="Mem2P6.vhd"/>
+      <outfile xil_pn:name="MicroFuncion.vhd"/>
+      <outfile xil_pn:name="Nivel.vhd"/>
+      <outfile xil_pn:name="OpCode.vhd"/>
+      <outfile xil_pn:name="Pila.vhd"/>
+      <outfile xil_pn:name="Registros.vhd"/>
+      <outfile xil_pn:name="alu4bits.vhd"/>
+      <outfile xil_pn:name="divisor.vhd"/>
+      <outfile xil_pn:name="main.vhd"/>
+      <outfile xil_pn:name="mem1.vhd"/>
+      <outfile xil_pn:name="tb_escomips.vhd"/>
+      <outfile xil_pn:name="tb_memprog.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1528705871" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-3494284727034196360" xil_pn:start_ts="1528705871">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1528705871" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8666433624131685526" xil_pn:start_ts="1528705871">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1528700328" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="1054335165292431157" xil_pn:start_ts="1528700328">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1528705837" xil_pn:in_ck="-4253520846644678340" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1528705837">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../unidad-de-control-1/automata.vhd"/>
+      <outfile xil_pn:name="Deco.vhd"/>
+      <outfile xil_pn:name="DetectorCondicion.vhd"/>
+      <outfile xil_pn:name="ESCOMips.vhd"/>
+      <outfile xil_pn:name="ESCOMipsPackage.vhd"/>
+      <outfile xil_pn:name="Extensor_direccion.vhd"/>
+      <outfile xil_pn:name="Extensor_signo.vhd"/>
+      <outfile xil_pn:name="Mem2P6.vhd"/>
+      <outfile xil_pn:name="MicroFuncion.vhd"/>
+      <outfile xil_pn:name="Nivel.vhd"/>
+      <outfile xil_pn:name="OpCode.vhd"/>
+      <outfile xil_pn:name="Pila.vhd"/>
+      <outfile xil_pn:name="Registros.vhd"/>
+      <outfile xil_pn:name="alu4bits.vhd"/>
+      <outfile xil_pn:name="divisor.vhd"/>
+      <outfile xil_pn:name="main.vhd"/>
+      <outfile xil_pn:name="mem1.vhd"/>
+      <outfile xil_pn:name="tb_escomips.vhd"/>
+      <outfile xil_pn:name="tb_memprog.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1528705877" xil_pn:in_ck="-4253520846644678340" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4686877202165235414" xil_pn:start_ts="1528705871">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_escomips_beh.prj"/>
+      <outfile xil_pn:name="tb_escomips_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1528705877" xil_pn:in_ck="3040038048936734274" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8216326972328017543" xil_pn:start_ts="1528705877">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_escomips_isim_beh.wdb"/>
+    </transform>
     <transform xil_pn:end_ts="1528589225" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1528589225">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -63,13 +163,18 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1528601573" xil_pn:in_ck="-4819851156775507880" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="3693391109799161554" xil_pn:start_ts="1528601566">
-      <status xil_pn:value="AbortedRun"/>
+    <transform xil_pn:end_ts="1528704479" xil_pn:in_ck="-4819851156775507880" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="3693391109799161554" xil_pn:start_ts="1528704447">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ESCOMips.lso"/>
+      <outfile xil_pn:name="ESCOMips.ngc"/>
+      <outfile xil_pn:name="ESCOMips.ngr"/>
       <outfile xil_pn:name="ESCOMips.prj"/>
+      <outfile xil_pn:name="ESCOMips.stx"/>
       <outfile xil_pn:name="ESCOMips.syr"/>
       <outfile xil_pn:name="ESCOMips.xst"/>
+      <outfile xil_pn:name="ESCOMips_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>

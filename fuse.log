@@ -1,0 +1,54 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/tb_escomips_isim_beh.exe -prj C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/tb_escomips_beh.prj work.tb_escomips 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/../unidad-de-control-1/automata.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/OpCode.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/Nivel.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/MicroFuncion.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/DetectorCondicion.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/Deco.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/Registros.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/Pila.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/Mem2P6.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/mem1.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/main.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/Extensor_signo.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/Extensor_direccion.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMipsPackage.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/divisor.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/alu4bits.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.vhd" into library work
+Parsing VHDL file "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/tb_escomips.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package escomipspackage
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity OpCode [opcode_default]
+Compiling architecture behavioral of entity Nivel [nivel_default]
+Compiling architecture behavioral of entity MicroFuncion [microfuncion_default]
+Compiling architecture behavioral of entity DetectorCondicion [detectorcondicion_default]
+Compiling architecture behavioral of entity Deco [deco_default]
+Compiling architecture behavioral of entity Control [control_default]
+Compiling architecture behavioral of entity main [main_default]
+Compiling architecture behavioral of entity Registros [\Registros(16)\]
+Compiling architecture behavioral of entity ALU4Bits [alu4bits_default]
+Compiling architecture behavioral of entity mem1 [\mem1(11,16)\]
+Compiling architecture behavioral of entity Pila [pila_default]
+Compiling architecture behavioral of entity Mem2P6 [\Mem2P6(10,25)\]
+Compiling architecture behavioral of entity Extensor_signo [extensor_signo_default]
+Compiling architecture behavioral of entity Extensor_direccion [extensor_direccion_default]
+Compiling architecture adivisor of entity divisor [divisor_default]
+Compiling architecture behavioral of entity ESCOMips [\ESCOMips(16)\]
+Compiling architecture behavior of entity tb_escomips
+Time Resolution for simulation is 1ps.
+Waiting for 13 sub-compilation(s) to finish...
+Compiled 39 VHDL Units
+Built simulation executable C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/tb_escomips_isim_beh.exe
+Fuse Memory Usage: 38292 KB
+Fuse CPU Usage: 1093 ms

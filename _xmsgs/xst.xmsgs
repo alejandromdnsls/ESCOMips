@@ -5,10 +5,4 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Registros.vhd" Line 37: <arg fmt="%s" index="1">read_reg1</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Mem2P6.vhd" Line 30: Net &lt;<arg fmt="%s" index="1">arreglo[5][24]</arg>&gt; does not have a driver.
-</msg>
-
 </messages>

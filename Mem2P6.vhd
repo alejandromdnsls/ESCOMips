@@ -15,7 +15,7 @@ use ieee.std_logic_unsigned.all;
 
 entity Mem2P6 is
 		generic(
-			m: integer := 10; --modificacion
+			m: integer := 10; --modificacion 
 			n: integer := 25
 		);
 
@@ -26,16 +26,16 @@ end Mem2P6;
 architecture Behavioral of Mem2P6 is
 
 
-type mem is array (0 to (2**m)-1) of std_logic_vector(n-1 downto 0);
+type mem is array (0 to (2**m)-1) of std_logic_vector(n-1 downto 0); --1024x16
 signal arreglo: mem;
 
 begin
 
-arreglo(0) <= '0'&x"100005";
-arreglo(1) <= '0'&x"11000A";
-arreglo(2) <= '0'&x"011000";
-arreglo(3) <= '0'&x"310005";
-arreglo(4) <= '1'&x"300002";
+arreglo(0) <= "0000100000000000000000001";
+arreglo(1) <= "0000100010000000000000111";
+arreglo(2) <= "0000000010001000000000000";
+arreglo(3) <= "0001100010000000000000101";
+arreglo(4) <= "1001100000000000000000010";
 
 
 

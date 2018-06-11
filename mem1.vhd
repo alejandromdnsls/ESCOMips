@@ -7,7 +7,7 @@ use ieee.std_logic_unsigned.ALL;
 entity mem1 is
 
 	 generic(
-				m :integer := 11;
+				m :integer := 11; --modificacion
 				n :integer := 16
 	); 
 
@@ -20,7 +20,7 @@ end mem1;
 
 architecture Behavioral of mem1 is
 
-type mem is array (0 to (2**m)-1) of std_logic_vector(n-1 downto 0);
+type mem is array (0 to (2**m)-1) of std_logic_vector(n-1 downto 0); --2048x16
 signal arreglo: mem;
 
 begin

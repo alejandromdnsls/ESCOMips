@@ -19,8 +19,8 @@ entity ESCOMips is
 	Port(
 			RCLR : in std_logic;
 			RCLK : in std_logic;
-			salida : out std_logic_vector (n-1 downto 0);
-			count_prog : out std_logic_vector (n-1 downto 0)
+			salida : out std_logic_vector (7 downto 0);	--modficacion
+			count_prog : out std_logic_vector (7 downto 0) --modificacion
 		);
 
 end ESCOMips;
@@ -123,7 +123,7 @@ begin
 		op_code => instruccion (24 downto 20),
 		i30 => instruccion (3 downto 0), --cod_function
 		banderas => FLAGS,
-		--nivel2: out std_logic;
+		--nivel2: out std_logic; NO OCUPAMOS
 		S => microinstruccion
 	);
 	
@@ -200,8 +200,8 @@ begin
       CLK => CLK
 	);
 	
-	salida <= READ_DATA2;
-	count_prog <= PC(9 downto 0); ---modificación
+	salida <= READ_DATA2(7 downto 0); --modificacion salida
+	count_prog <= PC(7 downto 0); --modificación salida
 	
 	
 end Behavioral;

@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.78 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.79 secs
  
 --> Reading design: ESCOMips.prj
 
@@ -101,93 +101,3 @@ Slice Utilization Ratio Delta      : 5
 
 =========================================================================
 
-
-=========================================================================
-*                          HDL Parsing                                  *
-=========================================================================
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\unidad-de-control-1\automata.vhd" into library work
-Parsing entity <Control>.
-Parsing architecture <Behavioral> of entity <control>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\OpCode.vhd" into library work
-Parsing entity <OpCode>.
-Parsing architecture <Behavioral> of entity <opcode>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Nivel.vhd" into library work
-Parsing entity <Nivel>.
-Parsing architecture <Behavioral> of entity <nivel>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\MicroFuncion.vhd" into library work
-Parsing entity <MicroFuncion>.
-Parsing architecture <Behavioral> of entity <microfuncion>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\DetectorCondicion.vhd" into library work
-Parsing entity <DetectorCondicion>.
-Parsing architecture <Behavioral> of entity <detectorcondicion>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Deco.vhd" into library work
-Parsing entity <Deco>.
-Parsing architecture <Behavioral> of entity <deco>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Registros.vhd" into library work
-Parsing entity <Registros>.
-Parsing architecture <Behavioral> of entity <registros>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Pila.vhd" into library work
-Parsing entity <Pila>.
-Parsing architecture <Behavioral> of entity <pila>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Mem2P6.vhd" into library work
-Parsing entity <Mem2P6>.
-Parsing architecture <Behavioral> of entity <mem2p6>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\mem1.vhd" into library work
-Parsing entity <mem1>.
-Parsing architecture <Behavioral> of entity <mem1>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\main.vhd" into library work
-Parsing entity <main>.
-Parsing architecture <Behavioral> of entity <main>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Extensor_signo.vhd" into library work
-Parsing entity <Extensor_signo>.
-Parsing architecture <Behavioral> of entity <extensor_signo>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Extensor_direccion.vhd" into library work
-Parsing entity <Extensor_direccion>.
-Parsing architecture <Behavioral> of entity <extensor_direccion>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\ESCOMipsPackage.vhd" into library work
-Parsing package <ESCOMipsPackage>.
-Parsing package body <ESCOMipsPackage>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\alu4bits.vhd" into library work
-Parsing entity <ALU4Bits>.
-Parsing architecture <Behavioral> of entity <alu4bits>.
-Parsing VHDL file "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\ESCOMips.vhd" into library work
-Parsing entity <ESCOMips>.
-Parsing architecture <Behavioral> of entity <escomips>.
-
-=========================================================================
-*                            HDL Elaboration                            *
-=========================================================================
-
-Elaborating entity <ESCOMips> (architecture <Behavioral>) with generics from library <work>.
-
-Elaborating entity <main> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <OpCode> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Nivel> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <MicroFuncion> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <DetectorCondicion> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Deco> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Control> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\main.vhd" Line 193. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\main.vhd" Line 202. Case statement is complete. others clause is never selected
-
-Elaborating entity <Registros> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Registros.vhd" Line 37: read_reg1 should be on the sensitivity list of the process
-
-Elaborating entity <ALU4Bits> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <mem1> (architecture <Behavioral>) with generics from library <work>.
-
-Elaborating entity <Pila> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Mem2P6> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:634 - "C:\Users\Alejandro Medina\Documents\Proyecto\ESCOMips\Mem2P6.vhd" Line 30: Net <arreglo[5][24]> does not have a driver.
-
-Elaborating entity <Extensor_signo> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Extensor_direccion> (architecture <Behavioral>) from library <work>.

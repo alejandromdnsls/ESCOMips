@@ -19,8 +19,8 @@ entity ESCOMips is
 	Port(
 			RCLR : in std_logic;
 			RCLK : in std_logic;
-			salida : out std_logic_vector (7 downto 0);	--modficacion
-			count_prog : out std_logic_vector (7 downto 0) --modificacion
+			salida : out std_logic_vector (15 downto 0);	--modficacion
+			count_prog : out std_logic_vector (15 downto 0) --modificacion
 		);
 
 end ESCOMips;
@@ -67,7 +67,6 @@ architecture Behavioral of ESCOMips is
 	
 	--Señales Mem de Programa
 	signal PC: std_logic_vector(n-1 downto 0);
-	signal SP: std_logic_vector(3 downto 0);
 	
 	--EXTENSORES
 	signal SIGNO: std_logic_vector(n-1 downto 0);
@@ -166,13 +165,12 @@ begin
 	Stack : Pila
 	Port map(
 		D => SSDMP,
-      up => UP,
-      dw => DW,
-      wpc => WPC,
-      clr =>  CLR,
-      clk => CLK,
-      q => PC,
-		sp => SP
+		Q =>PC,
+		CLK => CLK,
+		CLR => CLR,
+		UP => UP,
+		DW => DW,
+		WPC => WPC
 	);
 	
 	Memoria_Programa : Mem2P6
@@ -200,8 +198,8 @@ begin
       CLK => CLK
 	);
 	
-	salida <= READ_DATA2(7 downto 0); --modificacion salida
-	count_prog <= PC(7 downto 0); --modificación salida
+	salida <= READ_DATA2(15 downto 0); --modificacion salida
+	count_prog <= PC(15 downto 0); --modificación salida
 	
 	
 end Behavioral;

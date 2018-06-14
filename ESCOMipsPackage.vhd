@@ -63,16 +63,18 @@ component mem1 is
 end component;
 
 component Pila is
+	generic(
+				NBITS : INTEGER := 16 
+			);
 	port(
-			D : in  STD_LOGIC_VECTOR (15 downto 0);
-         up : in  STD_LOGIC;
-         dw : in  STD_LOGIC;
-         wpc : in  STD_LOGIC;
-			clr : in  STD_LOGIC;
-         clk : in  STD_LOGIC;
-         q : out  STD_LOGIC_VECTOR (15 downto 0);
-			sp : out std_logic_vector(3 downto 0)
-	);
+			D : in  STD_LOGIC_VECTOR (NBITS-1	 downto 0);
+         Q : out  STD_LOGIC_VECTOR (NBITS-1 downto 0);
+         CLK : in  STD_LOGIC;
+         CLR : in  STD_LOGIC;
+         UP : in  STD_LOGIC;
+         DW : in  STD_LOGIC;
+         WPC : in  STD_LOGIC
+		);
 end component;
 
 component Mem2P6 is

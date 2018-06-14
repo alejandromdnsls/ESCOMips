@@ -39,7 +39,7 @@ Compiling architecture behavioral of entity main [main_default]
 Compiling architecture behavioral of entity Registros [\Registros(16)\]
 Compiling architecture behavioral of entity ALU4Bits [alu4bits_default]
 Compiling architecture behavioral of entity mem1 [\mem1(11,16)\]
-Compiling architecture behavioral of entity Pila [pila_default]
+Compiling architecture behavioral of entity Pila [\Pila(16)\]
 Compiling architecture behavioral of entity Mem2P6 [\Mem2P6(10,25)\]
 Compiling architecture behavioral of entity Extensor_signo [extensor_signo_default]
 Compiling architecture behavioral of entity Extensor_direccion [extensor_direccion_default]
@@ -47,8 +47,8 @@ Compiling architecture adivisor of entity divisor [divisor_default]
 Compiling architecture behavioral of entity ESCOMips [\ESCOMips(16)\]
 Compiling architecture behavior of entity tb_escomips
 Time Resolution for simulation is 1ps.
-Waiting for 13 sub-compilation(s) to finish...
+Waiting for 14 sub-compilation(s) to finish...
 Compiled 39 VHDL Units
 Built simulation executable C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/tb_escomips_isim_beh.exe
-Fuse Memory Usage: 38292 KB
-Fuse CPU Usage: 1093 ms
+Fuse Memory Usage: 38352 KB
+Fuse CPU Usage: 1015 ms

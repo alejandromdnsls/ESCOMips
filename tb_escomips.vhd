@@ -43,8 +43,8 @@ ARCHITECTURE behavior OF tb_escomips IS
     PORT(
          RCLR : IN  std_logic;
          RCLK : IN  std_logic;
-         salida : OUT  std_logic_vector(7 downto 0);
-         count_prog : OUT  std_logic_vector(7 downto 0)
+         salida : OUT  std_logic_vector(15 downto 0);
+         count_prog : OUT  std_logic_vector(15 downto 0)
         );
     END COMPONENT;
     
@@ -54,8 +54,8 @@ ARCHITECTURE behavior OF tb_escomips IS
    signal RCLK : std_logic := '0';
 
  	--Outputs
-   signal salida : std_logic_vector(7 downto 0);
-   signal count_prog : std_logic_vector(7 downto 0);
+   signal salida : std_logic_vector(15 downto 0);
+   signal count_prog : std_logic_vector(15 downto 0);
 
    -- Clock period definitions
    constant RCLK_period : time := 10 ns;
@@ -84,13 +84,14 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 10 ns;
+      RCLR <= '0';
+		wait for 10 ns;
+		
 		RCLR <= '1';
-		WAIT UNTIL RISING_EDGE(RCLK);
 		WAIT UNTIL RISING_EDGE(RCLK);
 		RCLR <= '0';
 
-      wait for RCLK_period*100*50000000;
+      --wait for RCLK_period*10;
 
       -- insert stimulus here 
 

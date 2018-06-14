@@ -1,57 +1,47 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Pila is
-    Port ( D : in  STD_LOGIC_VECTOR (15 downto 0);
-           up : in  STD_LOGIC;
-           dw : in  STD_LOGIC;
-           wpc : in  STD_LOGIC;
-           clr : in  STD_LOGIC;
-           clk : in  STD_LOGIC;
-           q : out  STD_LOGIC_VECTOR (15 downto 0);
-			  sp : out std_logic_vector(3 downto 0));
+	GENERIC(
+		NBITS : INTEGER := 16 
+			);
+	
+Port (     D : in  STD_LOGIC_VECTOR (NBITS-1	 downto 0);
+           Q : out  STD_LOGIC_VECTOR (NBITS-1 downto 0);
+           CLK : in  STD_LOGIC;
+           CLR : in  STD_LOGIC;
+           UP : in  STD_LOGIC;
+           DW : in  STD_LOGIC;
+			  --SP1 : OUT INTEGER RANGE 0 TO 7;
+           WPC : in  STD_LOGIC);
 end Pila;
 
 architecture Behavioral of Pila is
-
-type contadores is array (0 to 15) of std_logic_vector(15 downto 0);
---signal asp: std_logic_vector(3 downto 0);
---signal pc_out: std_logic_vector(15 downto 0);
-
+TYPE STACKARR IS ARRAY(7 downto 0) OF STD_LOGIC_VECTOR(NBITS-1 DOWNTO 0);
 begin
-
-process (clk,clr) is
-
-variable axsp: std_logic_vector(3 downto 0);
-variable pila: contadores;
-
-begin
-	if clr = '1' then
-		axsp := "0000";
-		for i in 0 to 15 loop
-			pila(i) := x"0000";
-		end loop;
-	elsif clk'event and clk='1' then
-		if up='0' and dw ='0' and wpc='0' then
-			axsp := axsp;
-			pila(conv_integer(axsp)) := pila(conv_integer(axsp)) + 1 ;	
-		elsif up='0' and dw ='0' and wpc='1' then
-			axsp := axsp;
-			pila(conv_integer(axsp)) := D ;
-		elsif up='1' and dw ='0' and wpc='1' then
-			axsp := axsp + 1;
-			pila(conv_integer(axsp)) := D ;
-		elsif up='0' and dw ='1' and wpc='0' then
-			axsp := axsp - 1;
-			pila(conv_integer(axsp)) := pila(conv_integer(axsp)) + 1  ;
-		end if;	
-	end if;
-	q <= pila(conv_integer(axsp));
-	sp <= axsp;
-end process;
-
+	PPCS : PROCESS( CLK, CLR )
+	VARIABLE SP : INTEGER RANGE 0 TO 7;
+	VARIABLE PCS : STACKARR;
+	BEGIN
+		IF( CLR = '1' )THEN
+			PCS := (OTHERS=>(OTHERS=>'0'));			
+			SP := 0;
+		ELSIF( RISING_EDGE(CLK) )THEN
+				IF(WPC='1' AND UP='0' AND DW='0') THEN
+					PCS(SP):=D;
+				ELSIF(WPC='1' AND UP='1' AND DW='0') THEN
+					SP:=SP+1;
+					PCS(SP):=D;
+				ELSIF(WPC='0' AND UP='0' AND DW='1') THEN
+					SP:=SP-1;
+					PCS(SP):=(PCS(SP))+1;
+				ELSE
+					PCS(SP):=(PCS(SP))+1;
+				END IF;
+		END IF;
+		--SP1 <= SP;
+		Q <= PCS(SP);
+	END PROCESS ;
 end Behavioral;
 

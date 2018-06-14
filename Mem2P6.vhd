@@ -26,7 +26,7 @@ end Mem2P6;
 architecture Behavioral of Mem2P6 is
 
 
-type mem is array (0 to (2**m)-1) of std_logic_vector(n-1 downto 0); --1024x16
+type mem is array (0 to (2**m)-1) of std_logic_vector(n-1 downto 0); --1024x25
 signal arreglo: mem;
 
 begin

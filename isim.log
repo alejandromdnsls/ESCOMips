@@ -17,10 +17,8 @@ at 0 ps, Instance /tb_escomips/uut/Archivo_Registros/ : Warning: CONV_INTEGER: T
 at 0 ps, Instance /tb_escomips/uut/Archivo_Registros/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /tb_escomips/uut/Archivo_Registros/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /tb_escomips/uut/Memoria_Datos/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 0 ps, Instance /tb_escomips/uut/Stack/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /tb_escomips/uut/Memoria_Programa/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 Finished circuit initialization process.
 at 0 ps, Instance /tb_escomips/uut/Archivo_Registros/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 0 ps, Instance /tb_escomips/uut/Stack/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /tb_escomips/uut/Memoria_Programa/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /tb_escomips/uut/Unidad_Control/Inst_OpCode/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0

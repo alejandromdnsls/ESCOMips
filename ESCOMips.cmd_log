@@ -15,3 +15,8 @@ xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ES
 xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.xst" -ofn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.syr" 
 xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.xst" -ofn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.syr" 
 xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.xst" -ofn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.syr" 
+xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.xst" -ofn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.syr" 
+xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.xst" -ofn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.syr" 
+xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.xst" -ofn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.syr" 
+xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.xst" -ofn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.syr" 
+xst -intstyle ise -ifn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.xst" -ofn "C:/Users/Alejandro Medina/Documents/Proyecto/ESCOMips/ESCOMips.syr" 
